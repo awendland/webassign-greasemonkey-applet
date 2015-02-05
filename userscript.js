@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Webassign No Min-Width
+// @name         Webassign Improved
 // @namespace    http://alexwendland.com
-// @version      0.2
+// @version      0.3
 // @description  Improves the webassign.net experience. See demo at http://codepen.io/awendland/pen/GgqpLo
 // @author       Alex Wendland
 // @match        http://www.webassign.net/web/Student/Assignment-Responses*
-// @updateURL    https://rawgit.com/awendland/webassign-greasemonkey-applet/master/main.js
+// @updateURL    https://rawgit.com/awendland/webassign-greasemonkey-applet/master/userscript.js
 // @grant        none
 // ==/UserScript==
 
