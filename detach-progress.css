@@ -1,0 +1,15 @@
+.assignmentQuestionDetails.float {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+
+.assignmentQuestionDetails.float td {
+	padding: 5px;
+}
+
+.assignmentQuestionDetails.float td.points {
+	height: 23px;
+	padding: 3px 5px;
+}
