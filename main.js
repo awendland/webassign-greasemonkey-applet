@@ -2,14 +2,16 @@
 // @name         Webassign No Min-Width
 // @namespace    http://alexwendland.com
 // @version      0.2
-// @description  Removes the min-width on the Webassign container
+// @description  Improves the webassign.net experience. See demo at http://codepen.io/awendland/pen/GgqpLo
 // @author       Alex Wendland
 // @match        http://www.webassign.net/web/Student/Assignment-Responses*
+// @updateURL    https://rawgit.com/awendland/webassign-greasemonkey-applet/master/main.js
 // @grant        none
 // ==/UserScript==
 
 // Setup utils
 var head = document.querySelector('head');
+var ROOT_FOLDER = "https://rawgit.com/awendland/webassign-greasemonkey-applet/master/"
 function loadScript(url, callback) {
     // Adding the script tag to the head as suggested before
     var script = document.createElement('script');
@@ -37,7 +39,7 @@ var container = document.querySelector(".middle");
 container.style.minWidth = "0px";
 
 // Add detachable progress portion
-loadStyle("http://alexwendland.com/webassign-applet/detach-progress.css");
+loadStyle(ROOT_FOLDER + "detach-progress.css");
 var hasScrolled = false;
 window.addEventListener('scroll', function (e) {
     hasScrolled = true;
@@ -58,7 +60,7 @@ setInterval(function () {
 }, 250);
 
 // Calculator Applet
-loadStyle("http://alexwendland.com/webassign-applet/style.css");
+loadStyle(ROOT_FOLDER + "style.css");
 var mathHelper = document.createElement("div");
 mathHelper.classList.add("mathhelper");
 mathHelper.innerHTML = '<pre class="output"></pre><input placeholder="=" spellcheck=false><a class="toggle"></a>';

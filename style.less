@@ -1,0 +1,137 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.mathhelper {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 9999;
+  transition: height .5s, width .5s, border-radius .5s;
+  border-radius: 50%;
+  background: #009688;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 5px rgba(0,0,0,.3);
+  font-size: 14px;
+  font-family: monospace;
+  
+  &.resize {
+    transition: width 0s, height 0s;
+  }
+  
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    content: "";
+    cursor: nw-resize;
+  }
+  
+  & > a {
+    position: absolute;
+    font-size: 50px;
+    line-height: 46px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    &::after {
+      content: "+";
+      transition: text-shadow .2s;
+      text-shadow: 0 0 0 rgba(0,0,0,.3);
+    }
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      &::after {
+        text-shadow: 0 .02em .1em rgba(0,0,0,.8);
+      }
+    }
+  }
+  
+  input, .output {
+    transform-origin: 80% bottom;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .5s;
+    font-family: inherit;
+    outline: none;
+    background: white;
+    border: 1px solid #777;
+    border-radius: 50%;
+  }
+  
+  input {
+    font-size: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2em;
+    margin: 0;
+    border-radius: 0 0 4px 4px;
+    padding: .5em;
+  }
+  
+  .output {
+    position: absolute;
+    bottom: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+    overflow-y: auto;
+    .calculation {
+      padding: .5em .5em;
+      transition: all .25s;
+      margin-bottom: .25em;
+      &:hover {
+        background: #eee;
+      }
+      .exp, .res {
+        display: block;
+      }
+      .exp {
+        word-wrap: break-word;
+      }
+      .res {
+        color: #777;
+        word-wrap: break-word;
+        &::before {
+          margin: 0 .5em;
+          content: "=";
+          opacity: .5;
+        }
+      }
+    }
+  }
+  
+  &.open {
+    width: 300px;
+    height: 200px;
+    border-radius: 4px;
+    input, .output {
+      transform: scale(1);
+      opacity: 1;
+    }
+    & > a {
+      top: .5em;
+      left: inherit;
+      right: .75em;
+      font-size: 20px;
+      line-height: 16px;
+      text-align: right;
+      color: black;
+      &::after {
+        content: "\00D7";
+      }
+    }
+  }
+}
