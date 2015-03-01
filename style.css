@@ -1,6 +1,8 @@
 *,
 *:after,
 *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .mathhelper {
@@ -8,16 +10,19 @@
   bottom: 2em;
   right: 2em;
   z-index: 9999;
+  -webkit-transition: height 0.5s, width 0.5s, border-radius 0.5s;
   transition: height 0.5s, width 0.5s, border-radius 0.5s;
   border-radius: 50%;
   background: #009688;
   width: 50px;
   height: 50px;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   font-size: 14px;
   font-family: monospace;
 }
 .mathhelper.resize {
+  -webkit-transition: width 0s, height 0s;
   transition: width 0s, height 0s;
 }
 .mathhelper::after {
@@ -32,7 +37,7 @@
 .mathhelper > a {
   position: absolute;
   font-size: 50px;
-  line-height: 46px;
+  line-height: 54px;
   top: 0;
   left: 0;
   right: 0;
@@ -41,6 +46,7 @@
 }
 .mathhelper > a::after {
   content: "+";
+  -webkit-transition: text-shadow 0.2s;
   transition: text-shadow 0.2s;
   text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 }
@@ -53,14 +59,19 @@
 }
 .mathhelper input,
 .mathhelper .output {
+  -webkit-transform-origin: 80% bottom;
+  -ms-transform-origin: 80% bottom;
   transform-origin: 80% bottom;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
   opacity: 0;
+  -webkit-transition: all .5s;
   transition: all .5s;
   font-family: inherit;
   outline: none;
   background: white;
-  border: 2px solid #777;
+  border: 1px solid #777;
   border-radius: 50%;
 }
 .mathhelper input {
@@ -87,7 +98,8 @@
   overflow-y: auto;
 }
 .mathhelper .output .calculation {
-  padding: .25em .25em .5em .25em;
+  padding: .5em .5em;
+  -webkit-transition: all .25s;
   transition: all .25s;
   margin-bottom: .25em;
 }
@@ -117,6 +129,8 @@
 }
 .mathhelper.open input,
 .mathhelper.open .output {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1;
 }
