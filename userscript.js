@@ -155,4 +155,4 @@ var mathLoaded = function() {
     }
   });
 }
-loadScript("http://cdnjs.cloudflare.com/ajax/libs/mathjs/1.1.1/math.min.js", mathLoaded);
+loadScript("https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.1.1/math.min.js", mathLoaded);
